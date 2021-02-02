@@ -300,26 +300,26 @@ VM
             
             
             
-            
-	<div id="comment"></div>
-	<span id="comment-count"></span>
-	<script>
-    comment_el = '#comment';
-    comment_count_el = 'span.comment-count';
+          <!--载入js，在</body>之前插入即可-->
+    <!--Leancloud 操作库:-->
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <!--Valine 的核心代码库-->
+    <script src="/media/scripts/Valine.min.js"></script>
+<div class="comment"></div>
+<script>
     new Valine({
-        el: comment_el,				// 评论区元素（要求div）
-        count_el: comment_count_el,    // 评论计数元素（要求span）
-        lang: 'zh-cn',							   // 语言（zh-cn或en）
-        emoticon_url: 'https://cloud.panjunwen.com/alu', // 表情包根目录（自行解决文件托管）
-        emoticon_list: ["吐.png", "狂汗.png", "不说话.png"], // 表情包文件列表
-        app_id: 'yphRhGlU6OqEXP0Dg7OnyWL8-gzGzoHsz',			    										   	
-        app_key: 'e9pEecQwWQlKUfE6l7t0yQGy',    										      
-        placeholder: 'Write a comment',  // 提示符
-        admin_email_hash: 'd394dcb66a1da214867a9f509223c829', // 可选，管理员邮箱md5，用于显示管理员标志👮‍
-        max_nest: 3,					// 嵌套评论深度，太大会影响加载速度
-        page_size: 5					// 分页大小
+        // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+        av: AV, 
+        el: '.comment',
+	      lang: 'zh-cn',//设置评论语言
+        emoticon_url: 'https://cloud.panjunwen.com/alu',
+  emoticon_list: ["狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","暗地观察.png"],
+  app_id: 'yphRhGlU6OqEXP0Dg7OnyWL8-gzGzoHsz',
+  app_key: 'e9pEecQwWQlKUfE6l7t0yQGy',
+  placeholder: '评论留言'
     });
-	</script>
+</script>      
+
 
             
 
