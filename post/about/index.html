@@ -18,6 +18,9 @@
 
 
 
+
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
     <meta name="description" content="
 欢迎来到我的小站呀，很高兴遇见你！🤝
 
@@ -142,3 +145,11 @@ var app = new Vue({
 
   </body>
 </html>
+<div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: '<yphRhGlU6OqEXP0Dg7OnyWL8-gzGzoHsz>',
+            appKey: '<e9pEecQwWQlKUfE6l7t0yQGy>'
+        })
+    </script>

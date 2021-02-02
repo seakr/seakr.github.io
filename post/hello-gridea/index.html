@@ -18,6 +18,9 @@
 
 
 
+
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
     <meta name="description" content="👏  欢迎使用 Gridea ！
 ✍️  Gridea 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...
 
@@ -167,3 +170,11 @@ var app = new Vue({
 
   </body>
 </html>
+<div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: '<yphRhGlU6OqEXP0Dg7OnyWL8-gzGzoHsz>',
+            appKey: '<e9pEecQwWQlKUfE6l7t0yQGy>'
+        })
+    </script>

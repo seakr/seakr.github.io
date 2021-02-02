@@ -18,6 +18,9 @@
 
 
 
+
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
     <meta name="description" content="主芯片：ESP8266-12F
 PMU电源管理芯片：AXP202
 屏幕：微雪2.13&quot; V2 / 2.9&quot;
@@ -150,3 +153,11 @@ var app = new Vue({
 
   </body>
 </html>
+<div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: '<yphRhGlU6OqEXP0Dg7OnyWL8-gzGzoHsz>',
+            appKey: '<e9pEecQwWQlKUfE6l7t0yQGy>'
+        })
+    </script>
