@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>DRV8701E电机驱动设计参考 | Gridea</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://seakr.github.io/favicon.ico?v=1612258989863">
+<link rel="stylesheet" href="https://seakr.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="引脚配置和功能
+
+
+
+引脚名
+引脚编号
+功能
+配置
+
+
+
+
+EN
+14
+输入PWM
+
+
+
+PH
+15
+控制方向
+
+
+
+VM
+1
+电源
+连接至电动机电源;将VM和GND之间并联0.1μF的陶瓷电容和最小为10μF的陶瓷电容 根据驱动电流可能需..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://seakr.github.io">
+        <img src="https://seakr.github.io/images/avatar.png?v=1612258989863" class="site-logo">
+        <h1 class="site-title">Gridea</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://seakr.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">DRV8701E电机驱动设计参考</h2>
+            <div class="post-date">2021-02-02</div>
+            
+            <div class="post-content" v-pre>
+              <h2 id="引脚配置和功能">引脚配置和功能</h2>
+<table>
+<thead>
+<tr>
+<th>引脚名</th>
+<th>引脚编号</th>
+<th>功能</th>
+<th>配置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EN</td>
+<td>14</td>
+<td>输入PWM</td>
+<td></td>
+</tr>
+<tr>
+<td>PH</td>
+<td>15</td>
+<td>控制方向</td>
+<td></td>
+</tr>
+<tr>
+<td>VM</td>
+<td>1</td>
+<td>电源</td>
+<td>连接至电动机电源;将VM和GND之间并联0.1μF的陶瓷电容和最小为10μF的陶瓷电容 根据驱动电流可能需要额外的电容</td>
+</tr>
+<tr>
+<td>GND</td>
+<td>5/16/PPAD</td>
+<td>地</td>
+<td></td>
+</tr>
+<tr>
+<td>VCP</td>
+<td>2</td>
+<td>电荷泵输出</td>
+<td>通过16V、1μF陶瓷电容连接到VM</td>
+</tr>
+<tr>
+<td>CPH</td>
+<td>3</td>
+<td>电荷泵切换节点</td>
+<td>为CPH和CPL之间连接一个0.1μF的X7R电容耐压高于VM</td>
+</tr>
+<tr>
+<td>CPL</td>
+<td>4</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DVDD</td>
+<td>8</td>
+<td>3.3V逻辑电源稳压器</td>
+<td>通过6.3V，1-μF陶瓷电容连接到GND</td>
+</tr>
+<tr>
+<td>AVDD</td>
+<td>7</td>
+<td>4.8V模拟电源稳压器</td>
+<td>通过6.3V，1-μF陶瓷电容连接到GND</td>
+</tr>
+<tr>
+<td>nSLEEP</td>
+<td>13</td>
+<td>设备休眠</td>
+<td>将逻辑拉低以使器件进入High-Z的低功耗睡眠模式;内部下拉</td>
+</tr>
+<tr>
+<td>IDRIVE</td>
+<td>12</td>
+<td>栅极驱动电流设置引脚</td>
+<td>电阻值或电压强制通过此引脚设置栅极驱动电流</td>
+</tr>
+<tr>
+<td>VREF</td>
+<td>6</td>
+<td>模拟参考输入</td>
+<td>控制电流调节，配置引脚电压在0.3V-AVDD</td>
+</tr>
+<tr>
+<td>nFAULT</td>
+<td>9</td>
+<td>故障引脚</td>
+<td>出现故障时输出低电平，漏极开路输出需要外部上拉</td>
+</tr>
+<tr>
+<td>SNSOUT</td>
+<td>10</td>
+<td>比较输出</td>
+<td>当驱动电流达到斩波阈值时拉低逻辑低电平；漏极开路输出需要外部上拉</td>
+</tr>
+<tr>
+<td>SO</td>
+<td>11</td>
+<td>分流放大器输出</td>
+<td>此引脚上的电压等于SP电压乘以AV加上一个偏移量;此引脚上的电容不得超过1 nF</td>
+</tr>
+<tr>
+<td>SN</td>
+<td>20</td>
+<td>分流放大器负输入</td>
+<td>通过电流检测电阻连接到SP并连接到GND</td>
+</tr>
+<tr>
+<td>SP</td>
+<td>21</td>
+<td>分流放大器正输入</td>
+<td>通过电流检测电阻连接到低侧FET管源极和SN</td>
+</tr>
+<tr>
+<td>GH1</td>
+<td>17</td>
+<td>高端栅极</td>
+<td>连接到高端FET栅极</td>
+</tr>
+<tr>
+<td>GH2</td>
+<td>24</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>GL1</td>
+<td>19</td>
+<td>低端栅极</td>
+<td>连接到低端FET栅极</td>
+</tr>
+<tr>
+<td>GL2</td>
+<td>22</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>SH1</td>
+<td>18</td>
+<td>相节点</td>
+<td>连接至高端FET源极和低端FET漏极</td>
+</tr>
+<tr>
+<td>SH2</td>
+<td>23</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<figure data-type="image" tabindex="1"><img src="https://seakr.github.io/post-images/1612258812103.gif" alt="" loading="lazy"></figure>
+<p>（1）VCC不是DRV8701上的引脚，但是对于漏极开路输出nFAULT和SNSOUT，需要一个VCC电源上拉。系统控制器电源可以用于该上拉电压，或者这些引脚可以上拉到AVDD或DVDD。</p>
+<figure data-type="image" tabindex="2"><img src="https://seakr.github.io/post-images/1612258967760.png" alt="" loading="lazy"></figure>
+<p>DRV8701E由PH / EN接口控制。下表给出了驱动单刷直流电动机时的完整H桥状态。请注意，表中没有考虑DRV8701E内置的电流控制。正电流是在xOUT1→xOUT2方向上定义的。</p>
+<figure data-type="image" tabindex="3"><img src="https://seakr.github.io/post-images/1612258976373.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://seakr.github.io/post-images/1612258984905.png" alt="" loading="lazy"></figure>
+<p><strong>IDRIVE</strong></p>
+<p>可以通过设置IDRIVE电阻值或强制将电压施加到IDRIVE引脚来调整H桥输出（SHxpins）的上升和下降时间。 如果选择较高的IDRIVE设置，则FET栅极电压将更快地斜坡化。FET栅极斜坡直接影响H桥输出的上升和下降时间</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://seakr.github.io/post/xiang-mu-yu-gao-mo-shui-ping-tian-qi-shi-zhong/">
+                  <h3 class="post-title">
+                    [项目预告]墨水屏天气时钟
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
