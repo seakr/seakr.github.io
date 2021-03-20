@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://seakr.github.io</id>
     <title>Gridea</title>
-    <updated>2021-02-23T12:30:18.076Z</updated>
+    <updated>2021-03-20T07:57:43.064Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://seakr.github.io"/>
     <link rel="self" href="https://seakr.github.io/atom.xml"/>
@@ -10,6 +10,124 @@
     <logo>https://seakr.github.io/images/avatar.png</logo>
     <icon>https://seakr.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[MarkDown语法学习]]></title>
+        <id>https://seakr.github.io/post/markdown/</id>
+        <link href="https://seakr.github.io/post/markdown/">
+        </link>
+        <updated>2021-03-20T07:46:41.000Z</updated>
+        <summary type="html"><![CDATA[<p>🙃🙃MarkDown基本语法</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>🙃🙃MarkDown基本语法</p>
+<!-- more -->
+<h1 id="markdown语法学习">MarkDown语法学习</h1>
+<hr>
+<h2 id="标题">标题：</h2>
+<h1 id="一级标题">一级标题</h1>
+<h2 id="二级标题">二级标题</h2>
+<h2 id="三级标题">三级标题</h2>
+<pre><code class="language-markdown"># 一级标题
+## 二级标题
+### 三级标题
+</code></pre>
+<hr>
+<h2 id="字体">字体：</h2>
+<p><em>Hello，World！</em></p>
+<p><strong>Hello，World！</strong></p>
+<p><em><strong>Hello，World！</strong></em></p>
+<p><s>Hello，World！</s></p>
+<pre><code class="language-markdown">*Hello，World！*
+**Hello，World！**
+***Hello，World！***
+~~Hello，World！~~
+</code></pre>
+<hr>
+<h2 id="引用">引用：</h2>
+<blockquote>
+<p>引用的内容</p>
+</blockquote>
+<pre><code class="language-markdown">&gt; 引用的内容
+</code></pre>
+<hr>
+<h2 id="分割线">分割线：</h2>
+<hr>
+<hr>
+<pre><code class="language-markdown">---
+***
+</code></pre>
+<hr>
+<h2 id="图片">图片</h2>
+<figure data-type="image" tabindex="1"><img src="https://s4.ax1x.com/2021/03/20/6hdfb9.png" alt="MarkDown" loading="lazy"></figure>
+<pre><code class="language-markdown">![MarkDown](https://s4.ax1x.com/2021/03/20/6hdfb9.png)
+</code></pre>
+<hr>
+<h2 id="超链接">超链接</h2>
+<p><a href="https://seakr.github.io/">我的博客</a></p>
+<pre><code class="language-markdown">[我的博客](https://seakr.github.io/)
+</code></pre>
+<hr>
+<h2 id="代码块">代码块：</h2>
+<hr>
+<h2 id="列表">列表</h2>
+<ol>
+<li>有序列表1</li>
+<li>有序列表2</li>
+<li>有序列表3</li>
+</ol>
+<ul>
+<li>无序列表</li>
+</ul>
+<ul>
+<li>无序列表</li>
+</ul>
+<ul>
+<li>无序列表</li>
+</ul>
+<pre><code class="language-markdown">1. 有序列表1
+2. 有序列表2
+3. 有序列表3
+
+* 无序列表
+
++ 无序列表
+
+- 无序列表
+</code></pre>
+<hr>
+<h2 id="表格">表格</h2>
+<table>
+<thead>
+<tr>
+<th>姓名</th>
+<th>性别</th>
+<th>生日</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>张三</td>
+<td>男</td>
+<td>18</td>
+</tr>
+<tr>
+<td>李四</td>
+<td>男</td>
+<td>17</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="代码">代码</h2>
+<pre><code class="language-java">//在此输入java代码内容
+</code></pre>
+<p><code>hello</code></p>
+<pre><code class="language-markdown">``` java
+//在此输入java代码内容
+```
+`hello`
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[DRV8701E电机驱动设计参考]]></title>
         <id>https://seakr.github.io/post/drv8701e-dian-ji-qu-dong-she-ji-can-kao/</id>
