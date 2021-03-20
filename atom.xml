@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://seakr.github.io</id>
     <title>Gridea</title>
-    <updated>2021-03-20T07:57:43.064Z</updated>
+    <updated>2021-03-20T08:01:05.794Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://seakr.github.io"/>
     <link rel="self" href="https://seakr.github.io/atom.xml"/>
@@ -134,7 +134,11 @@
         <link href="https://seakr.github.io/post/drv8701e-dian-ji-qu-dong-she-ji-can-kao/">
         </link>
         <updated>2021-02-02T09:33:32.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="引脚配置和功能">引脚配置和功能</h2>
+        <summary type="html"><![CDATA[<p>栅极驱动芯片DRV8701使用的一些注意事项🤠</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>栅极驱动芯片DRV8701使用的一些注意事项🤠</p>
+<!-- more -->
+<h2 id="引脚配置和功能">引脚配置和功能</h2>
 <table>
 <thead>
 <tr>
@@ -296,9 +300,9 @@
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[[项目预告]墨水屏天气时钟]]></title>
-        <id>https://seakr.github.io/post/xiang-mu-yu-gao-mo-shui-ping-tian-qi-shi-zhong/</id>
-        <link href="https://seakr.github.io/post/xiang-mu-yu-gao-mo-shui-ping-tian-qi-shi-zhong/">
+        <title type="html"><![CDATA[[项目]墨水屏天气时钟]]></title>
+        <id>https://seakr.github.io/post/project-tqsz/</id>
+        <link href="https://seakr.github.io/post/project-tqsz/">
         </link>
         <updated>2021-02-01T07:35:56.000Z</updated>
         <content type="html"><![CDATA[<p>主芯片：ESP8266-12F</p>
